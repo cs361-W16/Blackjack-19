@@ -10,7 +10,7 @@ import java.util.Random;
 
 
 //abstract class
-public abstract class Game {
+public /*abstract*/ class Game {
 	
 	//create the deck list
 	public java.util.List</*card type goes here*/Integer> deck = new ArrayList<>();

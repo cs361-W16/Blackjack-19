@@ -14,6 +14,7 @@ public class gameTest
 
     {
         Game g = new Game();
+        //when Game is abstract, replace with instatiation of actual class
         assert(g.deck.size() == 52);
     }
 
@@ -21,6 +22,7 @@ public class gameTest
     public void testGetCardDecrementsSize()
     {
         Game g = new Game();
+        //when Game is abstract, replace with instatiation of actual class
         /*Card*/ Integer card1 = g.getCard();
         assert(g.deck.size() == 51);
     }
