@@ -13,12 +13,12 @@ import java.util.Random;
 public class Game {
 	
 	//create the deck list
-	public.java.util.List</*card type goes here*/int> deck = new ArrayList<>();
+	public java.util.List</*card type goes here*/Integer> deck = new ArrayList<>();
 	//use int as placeholder as the suit of the card doesn't matter in blackjack
 
 
-	//create the heand for each player?
-	public.java.util.List</*card type goes here*/int> hand = new ArrayList<>();
+	//create the hand for each player?
+	public java.util.List</*card type goes here*/Integer> hand = new ArrayList<>();
 
 	public int handScore = 0;
 
