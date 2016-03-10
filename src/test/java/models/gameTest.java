@@ -16,4 +16,14 @@ public class gameTest
         Game g = new Game();
         assert(g.deck.size() == 52);
     }
+
+    @Test
+    public void testGetCardDecrementsSize()
+    {
+        Game g = new Game();
+        /*Card*/ Integer card1 = g.getCard();
+        assert(g.deck.size() == 51);
+    }
+
+
 }

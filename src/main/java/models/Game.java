@@ -10,7 +10,7 @@ import java.util.Random;
 
 
 //abstract class
-public class Game {
+public abstract class Game {
 	
 	//create the deck list
 	public java.util.List</*card type goes here*/Integer> deck = new ArrayList<>();
@@ -19,6 +19,10 @@ public class Game {
 
 	//create the hand for each player?
 	public java.util.List</*card type goes here*/Integer> hand = new ArrayList<>();
+
+	//random # generator initialization
+	Random rnd = new Random();
+
 
 	public int handScore = 0;
 
@@ -36,5 +40,17 @@ public class Game {
 	public Game()
 	{
 		this.buildDeck();
+	}
+
+	//alternative plan: write shuffle, then each time you want a card shuffle the deck, get the last card then shrink
+	// the deck array by 1. This kills the card
+
+	//will return the card it chooses
+	public /*Card*/ Integer getCard()
+	{
+		int removedIdx = rnd.nextInt(deck.size());
+		/*Card*/ Integer removedCard = deck.get(removedIdx);
+		deck.remove(removedIdx);
+		return removedCard;
 	}
 }
