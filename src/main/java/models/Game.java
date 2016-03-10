@@ -23,7 +23,7 @@ public /*abstract*/ class Game {
 	Random rnd = new Random();
 
 
-	public int handScore = 0;
+	public int handScore = 0; //does this belong here?
 
 	public void buildDeck()
 	{

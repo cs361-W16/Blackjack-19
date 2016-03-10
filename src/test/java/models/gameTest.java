@@ -27,5 +27,14 @@ public class gameTest
         assert(g.deck.size() == 51);
     }
 
+    @Test
+    public void testDealTwo()
+    {
+        Game g = new Game();
+        g.getCard();
+        g.getCard();
+        assert(g.hand.size() == 2);
+    }
+
 
 }
