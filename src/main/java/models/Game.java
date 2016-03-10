@@ -50,11 +50,9 @@ public /*abstract*/ class Game {
 		int removedIdx = rnd.nextInt(deck.size());
 		/*Card*/ Integer removedCard = deck.get(removedIdx);
 		deck.remove(removedIdx);
+		hand.add(removedCard);
 		return removedCard;
 	}
 
-	public void hit()
-	{
-		hand.add(getCard());
-	}
+
 }
