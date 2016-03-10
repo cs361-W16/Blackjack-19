@@ -1,7 +1,6 @@
 package models;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Random;
 
 /**
@@ -52,5 +51,10 @@ public /*abstract*/ class Game {
 		/*Card*/ Integer removedCard = deck.get(removedIdx);
 		deck.remove(removedIdx);
 		return removedCard;
+	}
+
+	public void hit()
+	{
+		hand.add(getCard());
 	}
 }
