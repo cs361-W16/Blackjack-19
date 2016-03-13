@@ -1,19 +1,17 @@
 package models;
 
 import org.junit.Test;
-import org.junit.Assert.*;
+import static org.junit.Assert.*;
 
 /**
  * Created by isaac on 3/9/16.
  */
 public class gameTest
 {
-
     @Test
-    public void testGameStart()
-
+    public void testGameInit()
     {
         Game g = new Game();
-        assert(g.deck.size() == 52);
+        assertEquals(52, g.deck.size());
     }
 }

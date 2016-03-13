@@ -1,9 +1,9 @@
 package models;
 
-/**
- * Created by isaac on 3/12/16.
- */
+import org.junit.Test;
+import static org.junit.Assert.*;
+
 public class playerTest
 {
-    
+
 }

@@ -1,18 +1,20 @@
 package models;
 
-/**
- * Created by isaac on 3/12/16.
- */
+import java.util.ArrayList;
+
 public abstract class Player
 {
-    //in all 3:
-    //score
-    //
+    //create the hand for each player?
+    public java.util.List</*card type goes here*/Integer> hand = new ArrayList<>();
 
-    //user:
-    //bank
-    //bet
-    //double down
-    //ante
+    public int score;
 
+    public void getScore()
+    {
+        score = 0; //zero score to reset it
+        for (int i = 0; i < hand.size(); i++)
+        {
+            score += hand.get(i);
+        }
+    }
 }
