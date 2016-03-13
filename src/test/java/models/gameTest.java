@@ -9,11 +9,5 @@ import org.junit.Assert.*;
 public class gameTest
 {
 
-    @Test
-    public void testGameStart()
 
-    {
-        Game g = new Game();
-        assert(g.deck.size() == 52);
-    }
 }

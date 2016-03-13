@@ -11,6 +11,12 @@ public class Card
 
     //JSON creator?
 
+    public void setCard(Suit inSuit, int inValue)
+    {
+        value = inValue;
+        suit = inSuit;
+    }
+
     public Suit getSuit()
     {
         return suit;

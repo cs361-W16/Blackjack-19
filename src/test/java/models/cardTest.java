@@ -12,6 +12,8 @@ public class cardTest
     public void initCard()
     {
         Card c = new Card();
-
+        c.setCard(Suit.Spades,2);
+        assertEquals(Suit.Spades,c.getSuit());
+        assertEquals(2,c.getValue());
     }
 }
