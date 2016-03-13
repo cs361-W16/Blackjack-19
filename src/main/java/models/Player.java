@@ -20,16 +20,6 @@ public abstract class Player
             hand.remove(0);
     }
 
-    public int computeScore()
-    {
-        score = 0;
-        for (int i = 0; i < hand.size(); i++)
-        {
-            score += hand.get(i).getValue();
-        }
-        return score;
-    }
-
     public int setCardVal(Card card){
         int rank = card.getValue();
         if (rank >= 2 && rank <= 10){ // All those nums
@@ -52,7 +42,7 @@ public abstract class Player
             if (cValue == 11) {
                 highAces++; // Keep track of the number of (high) aces
             }
-            score += cValue;  // Calulate the current score
+            score += cValue;  // Calculate the current score
         }
 
         if (score > 21 && highAces >= 1) {
