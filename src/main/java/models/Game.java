@@ -12,6 +12,8 @@ import java.util.Random;
 //abstract class
 public class Game {
 
+	Random rnd = new Random();
+
 	//create the deck list
 	public java.util.List<Card> deck = new ArrayList<>();
 
@@ -33,7 +35,14 @@ public class Game {
 		}
 	}
 
-
+	//function to get card from the deck, remove it from deck, return it
+	public Card dealCard()
+	{
+		int removedIdx = rnd.nextInt(deck.size());
+		Card removedCard = deck.get(removedIdx);
+		deck.remove(removedIdx);
+		return removedCard;
+	}
 
 	public Game()
 	{
