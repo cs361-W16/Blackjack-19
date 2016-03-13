@@ -11,7 +11,7 @@ import java.util.Random;
 
 //abstract class
 public class Game {
-	
+
 	//create the deck list
 	public java.util.List<Card> deck = new ArrayList<>();
 	//use int as placeholder as the suit of the card doesn't matter in blackjack
