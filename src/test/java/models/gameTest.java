@@ -16,6 +16,27 @@ public class gameTest
         assertEquals(52,g.deck.size());
     }
 
+    @Test
+    public void testDeal(){ // Test that deck size decreases when cards are dealt out
+        Game g = new Game();
+        g.dealCard();
+        assertEquals(51, g.deck.size());
+    }
+
+/*    @Test
+    public void testUserWon(){
+        Game g = new Game();
+        User user = new User();
+        //Dealer dealer = new Dealer();
+        user.score = 21;
+        dealer.score = 25;
+        g.turnResults();
+    }*/
+
+    /*@Test
+    public void testUserLost(){
+
+    }*/
 
    // @Test
    // public void testGameStart()
@@ -43,6 +64,5 @@ public class gameTest
    //     g.getCard();
      //   assertEquals(g.hand.size(),2);
  //   }
-
 
 }
