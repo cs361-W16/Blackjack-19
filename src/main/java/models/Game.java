@@ -18,7 +18,7 @@ public class Game {
 
 	public void buildDeck()
 	{
-		Card addMe = null;
+		Card addMe = null; //placeholder card to add into the deck
 		for (int cNum = 2; cNum < 15; cNum++)
 		{
 			addMe.setCard(Suit.Hearts,cNum);
