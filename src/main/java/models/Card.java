@@ -36,4 +36,10 @@ public class Card
     {
         faceUp = true;
     }
+
+    public Card()
+    {
+        suit = Suit.Spades;
+        value = 2;
+    }
 }
