@@ -54,36 +54,38 @@ public class User{ //extends playComp{
         System.out.println("Invalid bet amount");
     }
 
-    // YO ISAAC. ADD THE FOLLOWING CODE TO THE PLAYER CLASS.
-    /*public int setCardVal(Card card){
+    /* YO ISAAC. ADD THE FOLLOWING CODE TO THE PLAYER CLASS. */
+    
+    // This function sets the card values
+    public int setCardVal(Card card){
         int rank = card.getValue();
-        if (rank >= 2 && rank <= 10){
+        if (rank >= 2 && rank <= 10){ // All those nums
             return rank;
-        }else if (rank >= 11 && rank < 15){
+        }else if (rank >= 11 && rank < 15){ // Make those face cards equal 10
             return 10;
-        }else{
+        }else{  // Oh look, it's an ace
             return 11;
         }
     }
 
     // Pass in the hand (list of cards) to calculate the user's score
     public int calcScore(java.util.List<Card> hand){
-        int score = 0;
-        int highAces = 0;
-        int cValue;
+        int score = 0;  // AKA handscore but who wants to type that
+        int highAces = 0; // Aces default to be 11
+        int cValue; 
 
         for (int i = 0; i < hand.size(); i++){
             cValue = setCardVal(hand.get(i));
             if (cValue == 11){
-                highAces++;
+                highAces++; // Keep track of the number of (high) aces
             }
-            score += cValue;
+            score += cValue;  // Calulate the current score
         }
 
         if (score > 21 && highAces >= 1){
-            score -= 10; // subtract 10 since the ace's value changes from 11 to 1
-            highAces -= 1;   //
+            score -= 10; // subtract 10 - the ace's value changes from 11 to 1
+            highAces -= 1;
         }
-        return score;
-    }*/
+        return score; // Return the score for this player's turn
+    }
 }
