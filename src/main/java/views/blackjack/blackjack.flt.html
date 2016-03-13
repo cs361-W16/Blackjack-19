@@ -8,18 +8,33 @@
 </head>
 <body>
     <div class="well"><h3>Welcome to BlackJack. Good Luck!</h3></div>
+    <div class="board">
     <div id="dealer"><p><h4>Dealer</h4></p>
-        <div id="dealer_cards"></div>
+        <div id="dealer_cards">
+            <img src="/assets/cards/cardback.png">
+            <img src="/assets/cards/cardback.png">
+        </div>
+        <div class="score"></div>
     </div>
     <br>
     <br>
     <div id="player"><p><h4>Player</h4></p>
-        <div id="player_cards"></div>
+        <div id="player_bank">
+            <p><h4>Current Bet:<div id="bet"></div>
+                <br>
+                <p>Bank:<div id="bank"></div></h4>
+        </div>
+        <div id="player_cards">
+            <img src="/assets/cards/cardback.png">
+            <img src="/assets/cards/cardback.png">
+        </div>
+        <div class="score"></div>
+    </div>
     </div>
 <br>
 <br>
+<button type="button" class="btn btn-warning" id="stayButton">Stay</button>
 <button type="button" class="btn btn-success" id="hitButton">Hit</button>
-<button type="button" class="btn btn-success" id="stayButton">Stay</button>
 <button type="button" class="btn btn-success" id="ddButton">Double Down</button>
 <button type="button" class="btn btn-success" id="splitButton">Split</button>
 
@@ -41,30 +56,6 @@ var game;
 
 function display(game) {
 console.log(game);
-
-    if(game.error == true){
-        alert("Invalid move.");
-    }
-
-$( '.columnOfCards .cardLocation' ).html("");
-
-    $.each(game.cols[0], function( key, val ) {
-        $( '#c0 .l'+key ).html(val.value + val.suit);
-    });
-
- $.each(game.cols[1], function( key, val ) {
-        $( '#c1 .l'+key ).html(val.value + val.suit);
-    });
-
- $.each(game.cols[2], function( key, val ) {
-        $( '#c2 .l'+key ).html(val.value + val.suit);
-    });
-
- $.each(game.cols[3], function( key, val ) {
-        $( '#c3 .l'+key ).html(val.value + val.suit);
-    });
-
-
 
 }
 
