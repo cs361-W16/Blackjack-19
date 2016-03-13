@@ -6,6 +6,7 @@ import static org.junit.Assert.*;
 /**
  * Created by isaac on 3/12/16.
  */
+
 public class cardTest
 {
     @Test
@@ -15,5 +16,15 @@ public class cardTest
         c.setCard(Suit.Spades,2);
         assertEquals(Suit.Spades,c.getSuit());
         assertEquals(2,c.getValue());
+    }
+
+    @Test
+    public void testFlip()
+    {
+        Card c = new Card();
+        c.turnFaceDown();
+        assertFalse(c.faceUp);
+        c.turnFaceUp();
+        assertTrue(c.faceUp);
     }
 }

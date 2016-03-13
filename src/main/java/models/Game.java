@@ -16,10 +16,6 @@ public class Game {
 	public java.util.List<Card> deck = new ArrayList<>();
 	//use int as placeholder as the suit of the card doesn't matter in blackjack
 
-
-	//create the hand for each player?
-	public java.util.List<Card> hand = new ArrayList<>();
-
 	public void buildDeck()
 	{
 		Card addMe = null;

@@ -26,4 +26,14 @@ public class Card
     {
         return value;
     }
+
+    public void turnFaceDown()
+    {
+        faceUp = false;
+    }
+
+    public void turnFaceUp()
+    {
+        faceUp = true;
+    }
 }
