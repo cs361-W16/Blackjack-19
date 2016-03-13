@@ -1,7 +1,6 @@
 package models;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Random;
 
 /**
@@ -14,11 +13,12 @@ public class Game {
 
 	//create the deck list
 	public java.util.List<Card> deck = new ArrayList<>();
-	//use int as placeholder as the suit of the card doesn't matter in blackjack
+
+	Random rnd = new Random();
 
 	public void buildDeck()
 	{
-		Card addMe = null;
+		Card addMe = new Card();
 		for (int cNum = 2; cNum < 15; cNum++)
 		{
 			addMe.setCard(Suit.Hearts,cNum);
@@ -32,7 +32,14 @@ public class Game {
 		}
 	}
 
-
+	//function to get card from the deck, remove it from deck, return it
+	public Card dealCard()
+	{
+		int removedIdx = rnd.nextInt(deck.size());
+		Card removedCard = deck.get(removedIdx);
+		deck.remove(removedIdx);
+		return removedCard;
+	}
 
 	public Game()
 	{
