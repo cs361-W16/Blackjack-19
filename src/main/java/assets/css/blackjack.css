@@ -48,7 +48,6 @@ img{
 #player_bank{
     position: absolute;
     left: 10%;
-    text-align: right;
 }
 .score{
     display: inline-block;
