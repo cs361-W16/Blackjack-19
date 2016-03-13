@@ -69,20 +69,20 @@ public class User{ //extends playComp{
     // Pass in the hand (list of cards) to calculate the user's score
     public int calcScore(java.util.List<Card> hand){
         int score = 0;
-        int numAces = 0;
+        int highAces = 0;
         int cValue;
 
         for (int i = 0; i < hand.size(); i++){
             cValue = setCardVal(hand.get(i));
             if (cValue == 11){
-                numAces++;
+                highAces++;
             }
             score += cValue;
         }
 
-        if (score > 21 && numAces >= 1){
+        if (score > 21 && highAces >= 1){
             score -= 10; // subtract 10 since the ace's value changes from 11 to 1
-            numAces -= 1;
+            highAces -= 1;   //
         }
         return score;
     }
