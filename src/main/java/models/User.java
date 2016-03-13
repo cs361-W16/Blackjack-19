@@ -11,18 +11,16 @@ import java.util.Random;
  */
 
 public class User extends Player{
-    /* Betting consists of --
-     * Current amount - $$
-     * Winnings: increment $$ by bet amount
-     * Losses: decrement $$ by bet amount
-     * Checking that the bet amount is valid
-        * Does it meet the minimum?
-        * Does the user have the funds to bet that amount?
-     */
     //private ByteArrayOutputStream errContent = new ByteArrayOutputStream();
 
-    public static int minimum = 2;
-    public int bank = 100; //initialize the bank to have $100
+    public static int minimum;
+    public int bank;
+
+    // Initializing the minimum and bank
+    public User(){
+        minimum = 2;
+        bank = 100;
+    }
 
     public int currentAmt(){
         return bank;
