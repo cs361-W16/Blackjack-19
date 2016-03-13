@@ -10,7 +10,7 @@ import static org.junit.Assert.*;
 public class gameTest
 {
     @Test
-    public void testGameInit()
+    public void testGameInitDeckSize()
     {
         Game g = new Game();
         assertEquals(52,g.deck.size());
