@@ -55,7 +55,7 @@ public class User{ //extends playComp{
     }
 
     // YO ISAAC. ADD THE FOLLOWING CODE TO THE PLAYER CLASS.
-    public int setCardVal(Card card){
+    /*public int setCardVal(Card card){
         int rank = card.getValue();
         if (rank >= 2 && rank <= 10){
             return rank;
@@ -85,5 +85,5 @@ public class User{ //extends playComp{
             highAces -= 1;   //
         }
         return score;
-    }
+    }*/
 }

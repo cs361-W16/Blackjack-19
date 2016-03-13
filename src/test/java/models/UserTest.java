@@ -4,31 +4,47 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-public class RPlayerTest{
+public class UserTest{
 
     @Test
-    public void testRPlayerGameCreation(){
-        RPlayer g = new RPlayer();
+    public void testUserGameCreation(){
+        User g = new User();
         assertNotNull(g);
     }
 
     @Test
     public void testBankInit(){
-        RPlayer g = new RPlayer();
+        User g = new User();
         assertEquals(100, g.currentAmt());
     }
 
     @Test
     public void testLostBet(){
-        RPlayer g = new RPlayer();
+        User g = new User();
         g.loseBet(5);
         assertEquals(95, g.currentAmt());
     }
 
     @Test
     public void testWonBet(){
-        RPlayer g = new RPlayer();
+        User g = new User();
         g.winBet(10);
         assertEquals(110, g.currentAmt());
     }
+
+    /*@Test
+    public void testInvalidBet(){
+        User g = new User();
+        g.makeBet(1);
+        System.err.print("Invalid bet amount");
+        assertEquals("Invalid bet amount", errContent.toString());
+    }*/
+
+    /*@Test
+    public void testValidBet(){
+        User g = new User();
+        g.makeBet(5);
+    }*/
+
+
 }
