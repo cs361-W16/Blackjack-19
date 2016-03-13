@@ -16,8 +16,10 @@
 
 package controllers;
 
+import models.Game;
 import ninja.Result;
 import ninja.Results;
+import ninja.Context;
 
 import com.google.inject.Singleton;
 
@@ -32,6 +34,25 @@ public class ApplicationController {
     }
     public Result blackjack() {
         return Results.html().template("views/blackjack/blackjack.flt.html");
+    }
+
+    //deal starts the game
+    public Result deal(Context context) {
+        Game g = new Game();
+
+        return Results.json().render(g);
+    }
+
+    public Result stay(Context context, Game g) {
+        return Results.json().render(g);
+    }
+
+    public Result dd(Context context, Game g) {
+        return Results.json().render(g);
+    }
+
+    public Result split(Context context, Game g) {
+        return Results.json().render(g);
     }
 
     public Result helloWorldJson() {

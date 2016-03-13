@@ -33,6 +33,7 @@
     </div>
 <br>
 <br>
+<button type="button" class="btn btn-primary" id="dealButton">Deal</button>
 <button type="button" class="btn btn-warning" id="stayButton">Stay</button>
 <button type="button" class="btn btn-success" id="hitButton">Hit</button>
 <button type="button" class="btn btn-success" id="ddButton">Double Down</button>
@@ -62,6 +63,19 @@ console.log(game);
 $.getJSON("http://localhost:8080/game", function( data ) {
 display(data);
 game = data;
+});
+
+$("#dealButton").click(function(){
+$.ajax({
+  type: "POST",
+  url: "/deal",
+  data: JSON.stringify(game),
+  success: function(data, status){console.log("Data: " + data + "\nStatus: " + status);
+        game = data;
+        display(data);},
+  contentType:"application/json; charset=utf-8",
+  dataType:"json",
+});
 });
 
 
