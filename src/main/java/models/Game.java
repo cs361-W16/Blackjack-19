@@ -37,5 +37,6 @@ public class Game {
 	public Game()
 	{
 		this.buildDeck();
+		/*instantiate user and dealer here*/
 	}
 }
