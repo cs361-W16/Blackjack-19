@@ -1,6 +1,7 @@
 package models;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Random;
 
 /**
@@ -9,30 +10,25 @@ import java.util.Random;
 
 
 //abstract class
-public /*abstract*/ class Game {
-	
+public class Game {
+
 	//create the deck list
-	public java.util.List</*card type goes here*/Integer> deck = new ArrayList<>();
+	public java.util.List<Card> deck = new ArrayList<>();
 	//use int as placeholder as the suit of the card doesn't matter in blackjack
-
-
-	//create the hand for each player?
-	public java.util.List</*card type goes here*/Integer> hand = new ArrayList<>();
-
-	//random # generator initialization
-	Random rnd = new Random();
-
-
-	public int handScore = 0; //does this belong here?
 
 	public void buildDeck()
 	{
+		Card addMe = null;
 		for (int cNum = 2; cNum < 15; cNum++)
 		{
-			deck.add(cNum);
-			deck.add(cNum);
-			deck.add(cNum);
-			deck.add(cNum);
+			addMe.setCard(Suit.Hearts,cNum);
+			deck.add(addMe);
+			addMe.setCard(Suit.Spades,cNum);
+			deck.add(addMe);
+			addMe.setCard(Suit.Clubs,cNum);
+			deck.add(addMe);
+			addMe.setCard(Suit.Diamonds,cNum);
+			deck.add(addMe);
 		}
 	}
 
@@ -40,19 +36,4 @@ public /*abstract*/ class Game {
 	{
 		this.buildDeck();
 	}
-
-	//alternative plan: write shuffle, then each time you want a card shuffle the deck, get the last card then shrink
-	// the deck array by 1. This kills the card
-
-	//will return the card it chooses
-	public /*Card*/ Integer getCard()
-	{
-		int removedIdx = rnd.nextInt(deck.size());
-		/*Card*/ Integer removedCard = deck.get(removedIdx);
-		deck.remove(removedIdx);
-		hand.add(removedCard);
-		return removedCard;
-	}
-
-
 }
