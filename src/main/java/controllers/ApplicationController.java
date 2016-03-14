@@ -20,6 +20,7 @@ import models.Game;
 import ninja.Result;
 import ninja.Results;
 import ninja.Context;
+import ninja.params.PathParam;
 
 import com.google.inject.Singleton;
 
@@ -42,6 +43,11 @@ public class ApplicationController {
 
         return Results.json().render(g);
     }
+
+    public Result hit(Context context, Game g) {
+        return Results.json().render(g);
+    }
+
 
     public Result stay(Context context, Game g) {
         return Results.json().render(g);

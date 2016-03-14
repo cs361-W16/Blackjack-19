@@ -28,10 +28,11 @@ public class Routes implements ApplicationRoutes {
     public void init(Router router) {
 
         router.GET().route("/").with(ApplicationController.class, "blackjack");
-        router.GET().route("/deal").with(ApplicationController.class, "deal");
-        router.GET().route("/stay").with(ApplicationController.class, "stay");
-        router.GET().route("/dd").with(ApplicationController.class, "dd");
-        router.GET().route("/split").with(ApplicationController.class, "split");
+        router.POST().route("/deal").with(ApplicationController.class, "deal");
+        router.POST().route("/hit").with(ApplicationController.class, "hit");
+        router.POST().route("/stay").with(ApplicationController.class, "stay");
+        router.POST().route("/dd").with(ApplicationController.class, "dd");
+        router.POST().route("/split").with(ApplicationController.class, "split");
 
 
 
