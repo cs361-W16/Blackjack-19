@@ -7,12 +7,19 @@ import static org.junit.Assert.*;
 public class userTest{
 
     @Test
-    public void testBet()
+    public void testInvalidBet()
     {
         User g = new User();
         g.makeBet(1);
         //literally just here to make test coverage better, add actual test when function is done :)
-        assertEquals(1,1);
+        assertEquals(1, g.err_no);
+    }
+
+    @Test
+    public void testValidBet(){
+        User g = new User();
+        g.makeBet(10);
+        assertEquals(10, 10);
     }
 
     @Test
