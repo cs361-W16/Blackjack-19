@@ -15,7 +15,7 @@ public class User extends Player implements Serializable {
     //private ByteArrayOutputStream errContent = new ByteArrayOutputStream();
 
     public static int minimum;
-    public int bank;
+    public int bank, err_no;
 
     // Initializing the minimum and bank
     public User(){
@@ -35,21 +35,12 @@ public class User extends Player implements Serializable {
         this.bank += ante;
     }
 
-    public void makeBet(int ante){
+    public int makeBet(int ante){
         if (ante >= minimum && bank >= ante){
-            // Call playComp function that checks whether player
-            // has won or lost against computer
-
-            // Uncomment this section when new class is
-            // implemented (that controls the game)
-            /*if (playerWon){ // bool variable
-                winBet(ante);
-                playerWon = false;
-            }
-            loseBet(ante);
-            compWon = false;*/
+            return ante;  // Valid bet so return the ante
         }
-        //System.setErr(new PrintStream(errContent));
-        System.out.println("Invalid bet amount");
+        // Set err_no to 1 if bet is invalid
+        err_no = 1;
+        return err_no;  // err_no 1 = Invalid bet amount
     }
 }

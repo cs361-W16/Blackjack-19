@@ -22,7 +22,7 @@ public class gameTest
         Game g = new Game();
         g.addCustomCardToDealer();
         g.addCustomCardToUser();
-        g.whoWon();
+        g.whoWon(5);
         assertTrue(g.dealerWon);
     }
 
@@ -100,32 +100,24 @@ public class gameTest
         assertTrue(g.userWon);
     }
 
-   // @Test
-   // public void testGameStart()
-//
- //   {
-  //      Game g = new Game();
-  //      //when Game is abstract, replace with instatiation of actual class
-  //      assertEquals(g.deck.size(), 52);
-  //  }
+    @Test
+    public void testStay(){
+        Game g = new Game();
+        User user = new User();
+        Dealer dealer = new Dealer();
+        g.stay();
+        assertTrue(dealer.score >= user.score);
+    }
 
-    //@Test
-    //public void testGetCardDecrementsSize()
-    //{
-    //    Game g = new Game();
-    //    //when Game is abstract, replace with instatiation of actual class
-     //   /*Card*/ Integer card1 = g.getCard();
-    //    assertEquals(g.deck.size(), 51);
-   // }
-
-  //  @Test
-  //  public void testDealTwo()
-  //  {
-   //     Game g = new Game();
-   //     g.getCard();
-   //     g.getCard();
-     //   assertEquals(g.hand.size(),2);
- //   }
-
-
+    @Test
+    public void testNewTurn(){
+        Game g = new Game();
+        User user = new User();
+        Dealer dealer = new Dealer();
+        g.newTurn();
+        assertEquals(0, user.hand.size());
+        assertEquals(0, dealer.hand.size());
+        assertFalse(g.userWon);
+        assertFalse(g.dealerWon);
+    }
 }
