@@ -15,7 +15,7 @@ import java.util.Random;
 //abstract class
 public class Game implements Serializable{
     // Declaring a heck ton of bools to keep track of game status
-    //public boolean gameTied, userWon, dealerWon;
+    public boolean invalidMove;
     public int playerWon;
     public User user;
     // public Dealer dealer; // Class has not been merged yet
@@ -88,6 +88,29 @@ public class Game implements Serializable{
             //dealer.empty_hand();
         }
         // Call a function that deals a new game??
+    }
+
+    //public void userTurn(){
+    //}
+
+    public void hit(){
+
+    }
+
+    public void stay(){ // User's turn ends, dealer's turn starts
+
+    }
+
+    public void split(java.util.List<Card> hand) {
+        if (hand.get(0).getValue() == hand.get(1).getValue()) {
+            java.util.List<Card> userHand1 = new ArrayList<>();
+            java.util.List<Card> userHand2 = new ArrayList<>();
+
+            userHand1.add(hand.get(0));
+            userHand2.add(hand.get(1));
+        }else{
+            invalidMove = true;
+        }
     }
 
 	public Game()
