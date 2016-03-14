@@ -14,8 +14,14 @@ public class Game {
 
 	Random rnd = new Random();
 
+	Dealer dealer;
+	User user;
+
 	//create the deck list
 	public java.util.List<Card> deck = new ArrayList<>();
+
+	boolean userWon = false;
+	boolean dealerWon = false;
 
 	//use int as placeholder as the suit of the card doesn't matter in blackjack
 
@@ -35,6 +41,25 @@ public class Game {
 		}
 	}
 
+	public void dealCardToUser()
+	{
+		user.hand.add(dealCard());
+	}
+
+	public void dealCardToDealer()
+	{
+		dealer.hand.add(dealCard());
+	}
+
+	public void whoWon()
+	{
+		int dealerScore = dealer.calcScore(dealer.hand);
+		int userScore = user.calcScore(user.hand);
+		if (dealerScore > userScore)
+			dealerWon = true;
+		else userWon = true;
+	}
+
 	//function to get card from the deck, remove it from deck, return it
 	public Card dealCard()
 	{
@@ -47,5 +72,9 @@ public class Game {
 	public Game()
 	{
 		this.buildDeck();
+		dealer = new Dealer();
+		user = new User();
+		dealerWon = false;
+		userWon = false;
 	}
 }
