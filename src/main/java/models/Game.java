@@ -95,9 +95,10 @@ public class Game {
         // Do we need to turn one of these cards face down? Or will that
         // be handled somewhere else?
         int userScore = user.calcScore(user.hand);
-        int dealerScore = dealer.calcScore(user.hand);
+        int dealerScore = dealer.calcScore(dealer.hand);
         while (dealerScore < userScore){
             dealCardToDealer();
+            dealerScore = dealer.calcScore(dealer.hand);
         }
     }
 
