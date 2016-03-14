@@ -101,7 +101,8 @@ public class gameTest
     }
 
     @Test
-    public void testStay(){
+    public void testStay()
+    {
         Game g = new Game();
         User user = new User();
         Dealer dealer = new Dealer();
