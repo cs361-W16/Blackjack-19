@@ -1,9 +1,11 @@
 package models;
 
+import java.io.Serializable;
+
 /**
  * Created by isaac on 3/12/16.
  */
-public class Card
+public class Card implements Serializable
 {
     private Suit suit;
     private int value;

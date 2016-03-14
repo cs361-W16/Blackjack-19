@@ -5,12 +5,13 @@ import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Random;
+import java.io.Serializable;
 
 /*
  *  Created by thai on 03/09/16
  */
 
-public class User extends Player{
+public class User extends Player implements Serializable {
     //private ByteArrayOutputStream errContent = new ByteArrayOutputStream();
 
     public static int minimum;

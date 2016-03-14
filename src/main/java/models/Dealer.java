@@ -1,6 +1,8 @@
 package models;
 
-public class Dealer extends Player{
+import java.io.Serializable;
+
+public class Dealer extends Player implements Serializable {
 
     public Dealer()
     {

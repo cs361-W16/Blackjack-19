@@ -2,11 +2,12 @@ package models;
 
 
 import java.util.ArrayList;
+import java.io.Serializable;
 
 /**
  * Created by isaac on 3/12/16.
  */
-public abstract class Player
+public abstract class Player implements Serializable
 {
     //"oops" not in the constructor
     public java.util.List<Card> hand = new ArrayList<>();

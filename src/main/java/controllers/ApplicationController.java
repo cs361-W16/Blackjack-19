@@ -20,6 +20,7 @@ import models.Game;
 import ninja.Result;
 import ninja.Results;
 import ninja.Context;
+import ninja.params.PathParam;
 
 import com.google.inject.Singleton;
 
@@ -39,9 +40,18 @@ public class ApplicationController {
     //deal starts the game
     public Result deal(Context context) {
         Game g = new Game();
-
+        g.dealCardToUser();
+        g.dealCardToUser();
+        g.dealCardToDealer();
+        g.dealCardToDealer();
         return Results.json().render(g);
     }
+
+    public Result hit(Context context, Game g) {
+        g.dealCardToUser();
+        return Results.json().render(g);
+    }
+
 
     public Result stay(Context context, Game g) {
         return Results.json().render(g);
