@@ -31,22 +31,22 @@ public class Game implements Serializable {
 		for (int cNum = 2; cNum < 15; cNum++)
 		{
 
-			deck.add(cardIdx, new Card(Suit.Hearts,cNum));
+			deck.add(new Card(Suit.Hearts,cNum));
 			cardIdx++;
 		}
 		for (int cNum = 2; cNum < 15; cNum++)
 		{
-			deck.add(cardIdx, new Card(Suit.Spades,cNum));
+			deck.add(new Card(Suit.Spades,cNum));
 			cardIdx++;
 		}
 		for (int cNum = 2; cNum < 15; cNum++)
 		{
-			deck.add(cardIdx, new Card(Suit.Clubs,cNum));
+			deck.add(new Card(Suit.Clubs,cNum));
 			cardIdx++;
 		}
 		for (int cNum = 2; cNum < 15; cNum++)
 		{
-			deck.add(cardIdx, new Card(Suit.Diamonds,cNum));
+			deck.add(new Card(Suit.Diamonds,cNum));
 			cardIdx++;
 		}
 	}
