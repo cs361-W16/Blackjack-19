@@ -28,16 +28,30 @@ public class Game implements Serializable {
 	public void buildDeck()
 	{
 		Card addMe = new Card();
+		int cardIdx = 0;
 		for (int cNum = 2; cNum < 15; cNum++)
 		{
 			addMe.setCard(Suit.Hearts,cNum);
-			deck.add(addMe);
+			deck.add(cardIdx, addMe);
+			cardIdx++;
+		}
+		for (int cNum = 2; cNum < 15; cNum++)
+		{
 			addMe.setCard(Suit.Spades,cNum);
-			deck.add(addMe);
-			addMe.setCard(Suit.Clubs,cNum);
-			deck.add(addMe);
+			deck.add(cardIdx, addMe);
+			cardIdx++;
+		}
+		for (int cNum = 2; cNum < 15; cNum++)
+		{
 			addMe.setCard(Suit.Diamonds,cNum);
-			deck.add(addMe);
+			deck.add(cardIdx, addMe);
+			cardIdx++;
+		}
+		for (int cNum = 2; cNum < 15; cNum++)
+		{
+			addMe.setCard(Suit.Clubs,cNum);
+			deck.add(cardIdx, addMe);
+			cardIdx++;
 		}
 	}
 
