@@ -54,13 +54,16 @@ public class Game implements Serializable{
 
 public class Game {
 
+	Random rnd = new Random();
+
 	//create the deck list
 	public java.util.List<Card> deck = new ArrayList<>();
+
 	//use int as placeholder as the suit of the card doesn't matter in blackjack
 
 	public void buildDeck()
 	{
-		Card addMe = null;
+		Card addMe = new Card();
 		for (int cNum = 2; cNum < 15; cNum++)
 		{
 			addMe.setCard(Suit.Hearts,cNum);
@@ -187,13 +190,4 @@ public class Game {
 
 
 
-
-
-
-
-
-	public Game()
-	{
-		this.buildDeck();
-	}
 }
