@@ -51,7 +51,7 @@ public class Game {
 	public void addCustomCardToDealer()
 	{
 		Card addMe = new Card();
-		addMe.setCard(Suit.Spades,3); //different to test who wins
+		addMe.setCard(Suit.Spades,15); //different to test who wins
 		dealer.hand.add(addMe);
 	}
 

@@ -19,7 +19,20 @@ public class gameTest
     @Test
     public void testPlayGame()
     {
+        Game g = new Game();
+        g.addCustomCardToDealer();
+        g.addCustomCardToUser();
+        g.whoWon();
+        assertTrue(g.dealerWon);
+    }
 
+    @Test
+    public void testEmptyHand() //has to be here cuz cards must be dealt
+    {
+        Game g = new Game();
+        g.addCustomCardToDealer();
+        g.dealer.empty_hand();
+        assertEquals(0,g.dealer.hand.size());
     }
 
     @Test
@@ -52,6 +65,15 @@ public class gameTest
         Game g = new Game();
         g.dealCardToDealer();
         assertEquals(g.dealer.hand.size(),1);
+    }
+
+    @Test
+    public void dealTwoAces()
+    {
+        Game g = new Game();
+        g.addCustomCardToDealer();
+        g.addCustomCardToDealer();
+        assertEquals(g.dealer.calcScore(g.dealer.hand),12);
     }
 
    // @Test
