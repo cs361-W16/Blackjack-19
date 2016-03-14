@@ -50,22 +50,22 @@ public class Game implements Serializable{
 		return removedCard;
 	}
 
-    public int turnResults(java.util.List<Card> userHand, java.util.List<Card> dealerHand){
+    public int turnResults(){
         /* Calculating the turn's results to return the appropriate values
             * 1 = user won
             * 2 = dealer won
             * 3 = game was tied
         */
-        if (user.calcScore(userHand) > 21){ // User busts
+        if (user.calcScore(user.hand) > 21){ // User busts
             playerWon = 2;
         }
-        else if (dealer.calcScore(dealerHand) > 21){ // Dealer busts
+        else if (dealer.calcScore(dealer.hand) > 21){ // Dealer busts
             playerWon = 1;
         }
-        else if (user.calcScore(userHand) > dealer.calcScore(dealerHand)){ // User wins
+        else if (user.calcScore(user.hand) > dealer.calcScore(dealer.hand)){ // User wins
             playerWon = 1;
         }
-        else if (user.calcScore(userHand) < dealer.calcScore(dealerHand)){ // Dealer wins
+        else if (user.calcScore(user.hand) < dealer.calcScore(dealer.hand)){ // Dealer wins
             playerWon = 2;
         }
         else{  // User and dealer have the same score
@@ -101,13 +101,13 @@ public class Game implements Serializable{
 
     }
 
-    public void split(java.util.List<Card> hand) {
-        if (hand.get(0).getValue() == hand.get(1).getValue()) {
+    public void split() {
+        if (user.hand.get(0).getValue() == user.hand.get(1).getValue()) {
             java.util.List<Card> userHand1 = new ArrayList<>();
             java.util.List<Card> userHand2 = new ArrayList<>();
 
-            userHand1.add(hand.get(0));
-            userHand2.add(hand.get(1));
+            userHand1.add(user.hand.get(0));
+            userHand2.add(user.hand.get(1));
         }else{
             invalidMove = true;
         }
