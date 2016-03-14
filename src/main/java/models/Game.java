@@ -16,6 +16,7 @@ public class Game {
 
 	Dealer dealer;
 	User user;
+	User user2;
 
 	//create the deck list
 	public java.util.List<Card> deck = new ArrayList<>();
@@ -28,17 +29,39 @@ public class Game {
 	public void buildDeck()
 	{
 		Card addMe = new Card();
+		int cardIdx = 0;
 		for (int cNum = 2; cNum < 15; cNum++)
 		{
 			addMe.setCard(Suit.Hearts,cNum);
-			deck.add(addMe);
-			addMe.setCard(Suit.Spades,cNum);
-			deck.add(addMe);
-			addMe.setCard(Suit.Clubs,cNum);
-			deck.add(addMe);
-			addMe.setCard(Suit.Diamonds,cNum);
-			deck.add(addMe);
+			deck.add(cardIdx, addMe);
+			cardIdx++;
 		}
+		for (int cNum = 2; cNum < 15; cNum++)
+		{
+			addMe.setCard(Suit.Spades,cNum);
+			deck.add(cardIdx, addMe);
+			cardIdx++;
+		}
+		for (int cNum = 2; cNum < 15; cNum++)
+		{
+			addMe.setCard(Suit.Diamonds,cNum);
+			deck.add(cardIdx, addMe);
+			cardIdx++;
+		}
+		for (int cNum = 2; cNum < 15; cNum++)
+		{
+			addMe.setCard(Suit.Clubs,cNum);
+			deck.add(cardIdx, addMe);
+			cardIdx++;
+		}
+	}
+
+	public void split()
+	{
+		user2 = new User();
+		Card moveMe = user.hand.get(user.hand.size()-1);
+		user2.hand.add(moveMe);
+		user.hand.remove(user.hand.size()-1);
 	}
 
 	public void addCustomCardToUser()
