@@ -81,7 +81,7 @@ public class Game {
 	{
 		int dealerScore = dealer.calcScore(dealer.hand);
 		int userScore = user.calcScore(user.hand);
-		if (dealerScore > userScore){
+        if (dealerScore > userScore){
             dealerWon = true;
             user.loseBet(ante);
         }else if (dealerScore != userScore){
