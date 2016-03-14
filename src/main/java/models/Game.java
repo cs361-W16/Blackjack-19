@@ -59,11 +59,22 @@ public class Game {
 	public void dealCardToUser()
 	{
 		user.hand.add(dealCard());
+		if (user.calcScore(user.hand) > 21)
+		{
+			userWon = false;
+			dealerWon = true;
+			//set flag to not play dealer game?
+		}
 	}
 
 	public void dealCardToDealer()
 	{
 		dealer.hand.add(dealCard());
+		if (dealer.calcScore(dealer.hand) > 21)
+		{
+			userWon = true;
+			dealerWon = false;
+		}
 	}
 
 	public void whoWon()

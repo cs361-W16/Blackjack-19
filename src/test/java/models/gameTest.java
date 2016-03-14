@@ -71,9 +71,9 @@ public class gameTest
     public void dealTwoAces()
     {
         Game g = new Game();
-        g.addCustomCardToDealer();
-        g.addCustomCardToDealer();
-        assertEquals(g.dealer.calcScore(g.dealer.hand),12);
+        g.addCustomCardToDealer(); //is an ace
+        g.addCustomCardToDealer(); //is an ace
+        assertEquals(g.dealer.calcScore(g.dealer.hand),12); //should be 12 not 22
     }
 
    // @Test
