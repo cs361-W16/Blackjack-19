@@ -76,6 +76,30 @@ public class gameTest
         assertEquals(g.dealer.calcScore(g.dealer.hand),12); //should be 12 not 22
     }
 
+    @Test
+    public void testUserBust()
+    {
+        Game g = new Game();
+        for (int i = 0; i < 25; i++)
+        {
+            g.dealCardToUser();
+        }
+        assertTrue(g.dealerWon);
+        assertFalse(g.userWon);
+    }
+
+    @Test
+    public void testDealerBust()
+    {
+        Game g = new Game();
+        for (int i = 0; i < 25; i++)
+        {
+            g.dealCardToDealer();
+        }
+        assertFalse(g.dealerWon);
+        assertTrue(g.userWon);
+    }
+
    // @Test
    // public void testGameStart()
 //
