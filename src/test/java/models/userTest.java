@@ -7,6 +7,14 @@ import static org.junit.Assert.*;
 public class userTest{
 
     @Test
+    public void dealCustomCardToUserTest()
+    {
+        Game g = new Game();
+        g.addCustomCardToUser();
+        assertEquals(g.user.hand.get(0).getSuit(),Suit.Spades);
+    }
+
+    @Test
     public void testUserGameCreation(){
         User g = new User();
         assertNotNull(g);

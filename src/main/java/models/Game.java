@@ -41,6 +41,21 @@ public class Game {
 		}
 	}
 
+	public void addCustomCardToUser()
+	{
+		Card addMe = new Card();
+		addMe.setCard(Suit.Spades,2);
+		user.hand.add(addMe);
+	}
+
+	public void addCustomCardToDealer()
+	{
+		Card addMe = new Card();
+		addMe.setCard(Suit.Spades,2);
+		dealer.hand.add(addMe);
+	}
+
+
 	public void dealCardToUser()
 	{
 		user.hand.add(dealCard());
