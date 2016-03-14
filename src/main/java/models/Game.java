@@ -87,6 +87,20 @@ public class Game {
 			userWon = true;
 	}
 
+    // A player choosing to stay is essentially a signal
+    // for the dealer's turn to start
+    public void stay(){
+        dealCardToDealer(); // Call twice at turn start
+        dealCardToDealer();
+        // Do we need to turn one of these cards face down? Or will that
+        // be handled somewhere else?
+        int userScore = user.calcScore(user.hand);
+        int dealerScore = dealer.calcScore(user.hand);
+        while (dealerScore < userScore){
+            dealCardToDealer();
+        }
+    }
+
 	//function to get card from the deck, remove it from deck, return it
 	public Card dealCard()
 	{

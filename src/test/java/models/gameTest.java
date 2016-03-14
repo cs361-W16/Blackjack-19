@@ -100,6 +100,15 @@ public class gameTest
         assertTrue(g.userWon);
     }
 
+    @Test
+    public void testStay(){
+        Game g = new Game();
+        User user = new User();
+        Dealer dealer = new Dealer();
+
+        g.stay();
+        assertTrue(dealer.score >= user.score);
+    }
    // @Test
    // public void testGameStart()
 //
