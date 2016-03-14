@@ -16,6 +16,43 @@ public class gameTest
         assertEquals(52,g.deck.size());
     }
 
+    @Test
+    public void testPlayGame()
+    {
+
+    }
+
+    @Test
+    public void dealCardToUserTest()
+    {
+        Game g = new Game();
+        g.dealCardToUser();
+        assertEquals(g.user.hand.size(),1);
+    }
+
+    @Test
+    public void dealCustomCardToUserTest()
+    {
+        Game g = new Game();
+        g.addCustomCardToUser();
+        assertEquals(g.user.hand.get(0).getSuit(),Suit.Spades);
+    }
+
+    @Test
+    public void dealCustomCardToDealerTest()
+    {
+        Game g = new Game();
+        g.addCustomCardToDealer();
+        assertEquals(g.dealer.hand.get(0).getSuit(),Suit.Spades);
+    }
+
+    @Test
+    public void dealCardToDealerTest()
+    {
+        Game g = new Game();
+        g.dealCardToDealer();
+        assertEquals(g.dealer.hand.size(),1);
+    }
 
    // @Test
    // public void testGameStart()

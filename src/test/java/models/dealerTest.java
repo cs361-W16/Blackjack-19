@@ -8,19 +8,5 @@ import static org.junit.Assert.*;
  */
 public class dealerTest
 {
-    @Test
-    public void dealCustomCardToDealerTest()
-    {
-        Game g = new Game();
-        g.addCustomCardToDealer();
-        assertEquals(g.dealer.hand.get(0).getSuit(),Suit.Spades);
-    }
 
-    @Test
-    public void dealCardToDealerTest()
-    {
-        Game g = new Game();
-        g.dealCardToDealer();
-        assertEquals(g.dealer.hand.size(),1);
-    }
 }

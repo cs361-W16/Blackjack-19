@@ -51,7 +51,7 @@ public class Game {
 	public void addCustomCardToDealer()
 	{
 		Card addMe = new Card();
-		addMe.setCard(Suit.Spades,2);
+		addMe.setCard(Suit.Spades,3); //different to test who wins
 		dealer.hand.add(addMe);
 	}
 
@@ -72,7 +72,8 @@ public class Game {
 		int userScore = user.calcScore(user.hand);
 		if (dealerScore > userScore)
 			dealerWon = true;
-		else userWon = true;
+		else if (dealerScore != userScore)
+			userWon = true;
 	}
 
 	//function to get card from the deck, remove it from deck, return it
