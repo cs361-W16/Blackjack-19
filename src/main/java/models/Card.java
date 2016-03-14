@@ -44,4 +44,10 @@ public class Card implements Serializable
         suit = Suit.Spades;
         value = 2;
     }
+
+    public Card(Suit inSuit, int inValue)
+    {
+        suit = inSuit;
+        value = inValue;
+    }
 }
