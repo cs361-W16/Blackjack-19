@@ -58,6 +58,21 @@ var game;
 function display(game) {
 console.log(game);
 
+$("#player_cards").html("");
+for(i=0; i < game.user.hand.length; i++) {
+    card = game.user.hand[i];
+    cimg = "<img src='/assets/cards/" + card.value + card.suit.charAt(0).toLowerCase() + ".png'>";
+        $("#player_cards").append(cimg);
+
+}
+
+$("#dealer_cards").html("");
+for(i=0; i < game.dealer.hand.length; i++) {
+    card = game.dealer.hand[i];
+    cimg = "<img src='/assets/cards/" + card.value + card.suit.charAt(0).toLowerCase() + ".png'>";
+        $("#dealer_cards").append(cimg);
+
+}
 }
 
 $.getJSON("http://localhost:8080/game", function( data ) {
@@ -67,7 +82,7 @@ game = data;
 
 $("#dealButton").click(function(){
 $.ajax({
-  type: "POST",
+  type: "GET",
   url: "/deal",
   data: JSON.stringify(game),
   success: function(data, status){console.log("Data: " + data + "\nStatus: " + status);

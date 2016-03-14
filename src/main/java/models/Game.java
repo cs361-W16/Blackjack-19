@@ -3,19 +3,19 @@ package models;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Random;
-
+import java.io.Serializable;
 /**
 * Created by IStallcup on 2/27/16.
 */
 
 
 //abstract class
-public class Game {
+public class Game implements Serializable {
 
 	Random rnd = new Random();
 
-	Dealer dealer;
-	User user;
+	public Dealer dealer;
+	public User user;
 
 	//create the deck list
 	public java.util.List<Card> deck = new ArrayList<>();

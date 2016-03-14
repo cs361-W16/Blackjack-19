@@ -40,11 +40,15 @@ public class ApplicationController {
     //deal starts the game
     public Result deal(Context context) {
         Game g = new Game();
-
+        g.dealCardToUser();
+        g.dealCardToUser();
+        g.dealCardToDealer();
+        g.dealCardToDealer();
         return Results.json().render(g);
     }
 
     public Result hit(Context context, Game g) {
+        g.dealCardToUser();
         return Results.json().render(g);
     }
 
