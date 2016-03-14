@@ -78,9 +78,9 @@ public class Game {
 	}
 
 	public void whoWon(int ante)
-	{
-		int dealerScore = dealer.calcScore(dealer.hand);
-		int userScore = user.calcScore(user.hand);
+    {
+        int dealerScore = dealer.calcScore(dealer.hand);
+        int userScore = user.calcScore(user.hand);
         if (dealerScore > userScore){
             dealerWon = true;
             user.loseBet(ante);
