@@ -77,23 +77,26 @@ public class Game {
 		}
 	}
 
-	public void whoWon()
+	public void whoWon(int ante)
 	{
 		int dealerScore = dealer.calcScore(dealer.hand);
 		int userScore = user.calcScore(user.hand);
-		if (dealerScore > userScore)
-			dealerWon = true;
-		else if (dealerScore != userScore)
-			userWon = true;
+		if (dealerScore > userScore) {
+            dealerWon = true;
+            user.loseBet(ante);
+        }
+		else if (dealerScore != userScore) {
+            userWon = true;
+            user.winBet(ante);
+        }
 	}
 
     // A player choosing to stay is essentially a signal
     // for the dealer's turn to start
     public void stay(){
-        dealCardToDealer(); // Call twice at turn start
-        dealCardToDealer();
-        // Do we need to turn one of these cards face down? Or will that
-        // be handled somewhere else?
+        /* Calculate what scores the user and dealer currently have
+             while the dealer has a smaller hand than the user, continue to hit
+             then re-calc/reset the dealerScore */
         int userScore = user.calcScore(user.hand);
         int dealerScore = dealer.calcScore(dealer.hand);
         while (dealerScore < userScore){
@@ -110,6 +113,14 @@ public class Game {
 		deck.remove(removedIdx);
 		return removedCard;
 	}
+
+    // Reset hands and win statuses
+    public void newTurn(){
+        user.empty_hand();
+        userWon = false;
+        dealer.empty_hand();
+        dealerWon = false;
+    }
 
 	public Game()
 	{
