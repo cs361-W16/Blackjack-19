@@ -40,7 +40,7 @@ public class Game implements Serializable{
 	public boolean hitTwoDisabled = false;
 	public boolean standTwoDisabled = false;
 	public boolean secondStand = false;
-	public boolean firstStand = false;
+//	public boolean firstStand = false;
 
 
 
