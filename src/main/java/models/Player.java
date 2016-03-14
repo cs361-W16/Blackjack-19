@@ -13,12 +13,14 @@ public abstract class Player
 
     public int score;
 
+
     public void empty_hand()
     {
         int hand_size = hand.size();
         for (int i = 0; i < hand_size; i++)
             hand.remove(0);
     }
+
 
     public int setCardVal(Card card){
         int rank = card.getValue();
@@ -30,6 +32,7 @@ public abstract class Player
             return 11;
         }
     }
+
 
     // Pass in the hand (list of cards) to calculate the user's score
     public int calcScore(java.util.List<Card> hand) {
@@ -52,8 +55,32 @@ public abstract class Player
         return score; // Return the score for this player's turn
     }
 
+
+
+    public int getScore(){
+
+		return this.score;
+    }
+
+
     public Player()
     {
-        score = 0;
+        this.score = 0;
     }
+
+
+	//return the hand of cards played by user
+    public java.util.List<Card> getHand()
+    {
+	return hand;
+    }
+
+
+   public void setter(java.util.List<Card> hand2)
+   {
+	this.score = hand2.score;
+   }
+
+
+
 }
